@@ -23,6 +23,7 @@ export default function Page() {
       />
       <p className={`${lusitana.className} mt-4 text-3xl`}>
         David, Carlos
+        Racx - Studio
       </p>
       {/* <div className={styles.shape}>
         Racx
