@@ -110,19 +110,19 @@ import time
 
 k = 0
 pyautogui.PAUSE = 1  # Add a pause between PyAutoGUI actions
-
+print("Starting...")
 def validate():
     global k
     try:
-        pyautogui.keyDown('ctrl')
-        print("Validating public key...")
+        pyautogui.keyDown('fn')
+        # print("Validating public key...")
         time.sleep(0.1)
-        pyautogui.keyUp('ctrl')
-        print("Validating pair...")
+        pyautogui.keyUp('fn')
+        # print("Validating pair...")
         k += 1
         if k == 102:
             k = 0
-        print(f"{k}")
+        # print(f"{k}")
     except pyautogui.FailSafeException:
         print("Fail-safe triggered. Pausing for 5 seconds...")
         time.sleep(5)
@@ -134,7 +134,7 @@ def main():
         while True:
             validate()
             time.sleep(random.randrange(56, 84))
-            print("\n")
+            # print("\n")
     except KeyboardInterrupt:
         print("\nScript terminated by user")
 
