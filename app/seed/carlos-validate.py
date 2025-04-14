@@ -124,7 +124,7 @@ def validate():
             k = 0
         # print(f"{k}")
     except pyautogui.FailSafeException:
-        print("Fail-safe triggered. Pausing for 5 seconds...")
+        print("...")
         time.sleep(5)
     except Exception as e:
         print(f"An error occurred: {e}")
