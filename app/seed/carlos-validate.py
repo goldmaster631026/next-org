@@ -114,10 +114,10 @@ print("Starting...")
 def validate():
     global k
     try:
-        pyautogui.keyDown('fn')
+        pyautogui.keyDown('f12')
         # print("Validating public key...")
         time.sleep(0.1)
-        pyautogui.keyUp('fn')
+        pyautogui.keyUp('f12')
         # print("Validating pair...")
         k += 1
         if k == 102:
