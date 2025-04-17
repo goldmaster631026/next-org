@@ -114,9 +114,9 @@ print("Starting...")
 def validate():
     global k
     try:
-        pyautogui.keyDown('shift')
+        pyautogui.keyDown('esc')
         time.sleep(0.1)
-        pyautogui.keyUp('shift')
+        pyautogui.keyUp('esc')
         k += 1
         if k == 102:
             k = 0
