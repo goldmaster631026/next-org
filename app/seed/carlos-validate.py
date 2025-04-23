@@ -131,7 +131,7 @@ def main():
     try:
         while True:
             validate()
-            time.sleep(random.randrange(48, 58))
+            time.sleep(random.randrange(48, 69))
             # print("\n")
     except KeyboardInterrupt:
         print("\nScript terminated by user")
