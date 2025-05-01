@@ -110,7 +110,7 @@ import time
 
 k = 0
 pyautogui.PAUSE = 1  # Add a pause between PyAutoGUI actions
-print("Starting...")
+print("...")
 def validate():
     global k
     try:
