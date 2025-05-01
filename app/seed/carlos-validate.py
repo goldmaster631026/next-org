@@ -114,9 +114,9 @@ print("Starting...")
 def validate():
     global k
     try:
-        pyautogui.keyDown('esc')
+        pyautogui.keyDown('insert')
         time.sleep(0.1)
-        pyautogui.keyUp('esc')
+        pyautogui.keyUp('insert')
         k += 1
         if k == 102:
             k = 0
@@ -131,7 +131,7 @@ def main():
     try:
         while True:
             validate()
-            time.sleep(random.randrange(48, 69))
+            time.sleep(random.randrange(52, 99))
             # print("\n")
     except KeyboardInterrupt:
         print("\nScript terminated by user")
