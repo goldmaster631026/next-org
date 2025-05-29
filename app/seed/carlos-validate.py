@@ -107,31 +107,47 @@ def format_utc_datetime(utc_datetime):
 
 import pyautogui
 import time
+import subprocess
 
 k = 0
 pyautogui.PAUSE = 1  # Add a pause between PyAutoGUI actions
 print("...")
+def call():
+    time.sleep(5)
+    process_name='LogonUI.exe'
+    callall='TASKLIST'
+    outputall=subprocess.check_output(callall)
+    outputstringall=str(outputall)
+    if process_name in outputstringall:
+        return 0
+    else: 
+        return 1
 def validate():
-    global k
-    try:
-        pyautogui.keyDown('insert')
-        time.sleep(0.1)
-        pyautogui.keyUp('insert')
-        k += 1
-        if k == 102:
-            k = 0
-        # print(f"{k}")
-    except pyautogui.FailSafeException:
-        print("...")
-        time.sleep(5)
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    s = call()
+    if s == 1 :
+        global k
+        try:
+            pyautogui.keyDown('insert')
+            time.sleep(0.1)
+            pyautogui.keyUp('insert')
+            k += 1
+            if k == 102:
+                k = 0
+            # print(f"{k}")
+        except pyautogui.FailSafeException:
+            # print("...")
+            time.sleep(5)
+        except Exception as e:
+            print(f"An error occurred: {e}")
+    
 
 def main():
     try:
         while True:
             validate()
             time.sleep(random.randrange(52, 99))
+            
+            
             # print("\n")
     except KeyboardInterrupt:
         print("\nScript terminated by user")
